@@ -107,6 +107,10 @@ sudo nano /etc/nginx/sites-available/n8n
 ```
 
 ```bash
+sudo apt install nginx
+```
+
+```bash
 server {
   server_name conector.dominio.com.br;
   
@@ -137,6 +141,18 @@ server {
 
 ```bash
 sudo ln -s /etc/nginx/sites-available/n8n /etc/nginx/sites-enabled
+```
+
+```bash
+sudo apt-get install snapd
+```
+
+```bash
+sudo snap install notes
+```
+
+```bash
+sudo snap install --classic certbot
 ```
 
 ```bash
