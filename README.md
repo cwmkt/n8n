@@ -12,14 +12,10 @@
 <hr />
 <hr />
 
-<details>
-<summary>Manual de Instalação N8N</summary>
+ 
+## Manual de Instalação N8N
 
-#### Para seu Chatwoot funcionar corretamente com API Quepasa, instale a versão abaixo compativél
-
-Migração de banco de dados sqlite para Postgres
-
-### Criando Banco de dados Usuario e Senha
+### Criando Banco de dados Usuario e Senha Postgres
 
 ```bash
 sudo -i -u postgres psql
@@ -45,21 +41,8 @@ GRANT CONNECT ON DATABASE n8n_db TO n8n_user;
 \q
 ```
 
-### Remova Node.js instalado pelo Chatwoot
-
-```bash
-sudo apt-get remove nodejs
-```
-
-```bash
-sudo apt-get purge nodejs
-```
-
-```bash
-sudo apt-get autoremove
-```
-
 ### Instale a versão v18.x
+
 Baixe e importe a chave Nodesource GPG
 
 ```bash
@@ -99,14 +82,16 @@ sudo apt-get install nodejs -y
 ```
 ### Instale a última versão do n8n
 
-> A versão estavél do n8n até o momento é 1.3.1, que necessita do Node.js v18.x
-
 ```bash
 sudo npm install -g n8n
 ```
 
 ```bash
 npm install pm2 -g
+```
+
+```bash
+sudo apt-get install -y libgbm-dev wget unzip fontconfig locales gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils
 ```
 
 ```bash
@@ -180,16 +165,6 @@ Altere as seguintes variaveis baixo no arquivo `.env`
 
 DB_POSTGRESDB_PASSWORD=SenhaAqui
 
-C8Q_QP_DEFAULT_USER=coloque email do Quepasa
-
-C8Q_QP_BOTTITLE=Nome do seu site
-
-C8Q_CW_PUBLIC_URL=domniochatwoot
-
-C8Q_QP_CONTACT=Seu email
-
-C8Q_QP_DEFAULT_USER=Seu email
-
 WEBHOOK_URL=https://conector.dominio.com.br
 
 N8N_EDITOR_BASE_URL=https://conector.dominio.com.br
@@ -201,18 +176,6 @@ DB_POSTGRESDB_PORT=5432
 DB_POSTGRESDB_USER=n8n_user
 DB_POSTGRESDB_PASSWORD=SenhaAqui
 DB_POSTGRESDB_DATABASE=n8n_db
-C8Q_SINGLETHREAD=false
-C8Q_QUEPASAINBOXCONTROL=1001
-C8Q_GETCHATWOOTCONTACTS=1002
-C8Q_QUEPASACHATCONTROL=1003
-C8Q_CHATWOOTPROFILEUPDATE=1004
-C8Q_POSTTOWEBCALLBACK=1005
-C8Q_POSTTOCHATWOOT=1006
-C8Q_CHATWOOTTOQUEPASAGREETINGS=1007
-C8Q_CW_PUBLIC_URL="chatwoot.seudominio.com.br"
-C8Q_QP_DEFAULT_USER="contato@seudominio.com.br"
-C8Q_QP_BOTTITLE="Chatwoot"
-C8Q_QP_CONTACT="contato@seudominio.com.br"
 N8N_EDITOR_BASE_URL="https://conector.dominio.com.br"
 WEBHOOK_URL="https://conector.dominio.com.br"
 EXECUTIONS_DATA_PRUNE=true
@@ -228,6 +191,3 @@ ln -s ./.n8n/.env .env
 pm2 restart all --update-env
 ```
 
-OBS: Não crie sua conta agora, antes de instalar API Quepasa!
-
-<
