@@ -18,6 +18,10 @@
 ### Criando Banco de dados Usuario e Senha Postgres
 
 ```bash
+sudo apt-get install postgresql
+```
+
+```bash
 sudo -i -u postgres psql
 ```
 
