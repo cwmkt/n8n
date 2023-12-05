@@ -48,6 +48,14 @@ GRANT CONNECT ON DATABASE n8n_db TO n8n_user;
 ### Instale a última versão do n8n
 
 ```bash
+sudo apt-get install nodejs
+```
+
+```bash
+apt install npm
+```
+
+```bash
 sudo npm install -g n8n
 ```
 
