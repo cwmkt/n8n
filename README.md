@@ -48,7 +48,39 @@ GRANT CONNECT ON DATABASE n8n_db TO n8n_user;
 ### Instale a última versão do n8n
 
 ```bash
-sudo apt-get install nodejs
+sudo apt-get update
+```
+
+```bash
+sudo apt-get install -y ca-certificates curl gnupg
+```
+
+```bash
+sudo mkdir -p /etc/apt/keyrings
+```
+
+```bash
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+```
+
+Criar repositório deb
+
+```bash
+NODE_MAJOR=20
+```
+
+```bash
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+```
+
+Execute a atualização e instale
+
+```bash
+sudo apt-get update
+```
+
+```bash
+sudo apt-get install nodejs -y
 ```
 
 ```bash
