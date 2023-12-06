@@ -84,10 +84,6 @@ sudo apt-get install nodejs -y
 ```
 
 ```bash
-apt install npm
-```
-
-```bash
 sudo npm install -g n8n
 ```
 
